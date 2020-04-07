@@ -21,29 +21,36 @@ body {
   color: #071723;
 }
 
+input, button, textarea {
+  outline: none;
+  cursor: pointer;
+}
+
 .box {
   background-color: #f2f2f2;
   border-radius: 8px;
   box-shadow: 10px 22px 34px 0 rgba(0, 0, 0, 0.5);
   margin: 20px auto;
   overflow: hidden;
-  width: 550px;
+  width: 560px;
 }
 
-.space {
+@media only screen and (max-width: 560px) {
+  .box {
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+  }
+}
+
+.field-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 16px;
   margin-bottom: 16px;
 }
 
-.space-md {
-  margin-bottom: 32px;
-}
-
-.label {
-  font-size: 18px;
-  font-weight: 600;
-}
-
-.header {
+header {
   background: url(images/header.png) center right no-repeat;
   background-size: cover;
   height: 187px;
@@ -51,19 +58,27 @@ body {
   width: 100%;
 }
 
-.header .title {
-  color: #fff;
+header section.title {
+  width: 50%;
+}
+
+header section.title h1 {
+  color: #ffffff;
   font-size: 23px;
-  font-weight: 300;
+  font-weight: 200;
+  line-height: 28px;
 }
 
-.header .title span {
+header .title span {
   font-weight: bold;
-  font-size: 24px;
-  line-height: 1.46;
+  font-size: 23px;
 }
 
-.form textarea {
+form {
+  margin-top: 32px;
+}
+
+form textarea {
   background: #dde3e9;
   border: 1px solid #2f3676;
   border-radius: 8px;
@@ -73,34 +88,136 @@ body {
   resize: none;
   width: 100%;
   font-size: 14px;
+  line-height: 24px;
 }
 
 .fieldset {
-  padding: 0 32px;
+  padding: 0 32px 16px;
 }
 
-.counter svg {
+.checking .checkbox {
+  display: block;
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.checking .checkbox > span {
+  color: #2f3676;
+  padding-left: 0.25rem;
+  vertical-align: middle;
+  font-size: 14px;
+}
+
+.checking .checkbox > input {
+  height: 24px;
+  width: 24px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  border: none;
+  border-radius: 4px;
+  transition-duration: 0.3s;
+  background-color: #2f3676;
+  vertical-align: middle;
+}
+
+.checking .checkbox > input:hover {
+  background-color: #191847;
+}
+
+.checking .checkbox > input:checked {
+  background-color: #2f3676;
+}
+
+.checking .checkbox > input:disabled {
+  background-color: #c5cfd6;
+}
+
+.checking .checkbox > input.error {
+  background-color: #f59393;
+}
+
+.checking .checkbox > input:checked + span::before {
+  content: '✓';
+  display: block;
+  font-weight: 750;
+  font-size: 18px;
+  text-align: center;
+  color: #FFF;
+  position: absolute;
+  left: 0.3rem;
+  top: 0.15rem;
+}
+
+.checking .checkbox > input:active {
+  border: 2px solid #2f3676;
+}
+
+.counter {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.counter button {
+  border: none;
+}
+
+.counter button > svg {
   fill: #2f3676;
 }
 
+.counter button:disabled > svg {
+  fill: #c5cfd6;
+}
+
+.counter button:hover > svg {
+  fill: #191847;
+}
+
 .counter input {
+  vertical-align: middle;
   background: #dde3e9;
   border: 1px solid #2f3676;
   border-radius: 7px;
+  color: #071723;
   font-size: 20px;
   font-weight: bold;
   margin: 0 8px;
   width: 60px;
+  height: 42px;
+  text-align: center;
 }
 
-.footer {
+.counter input.error {
+  background-color: #f59393;
+  border: 1px solid #f33232;
+}
+
+/* Edge */
+.counter input::-webkit-input-placeholder {
+  color: #071723;
+}
+
+/* Internet Explorer 10-11 */
+.counter input:-ms-input-placeholder {
+  color: #071723;
+}
+
+.counter input::placeholder {
+  color: #071723;
+}
+
+.form-footer {
   padding: 32px;
   background: #dde3e9;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 
-.footer button {
+.form-footer button {
   appearance: none;
   background: #2f3676;
   border: 0;
@@ -113,8 +230,24 @@ body {
   padding: 8px 32px;
 }
 
-.footer button:focus,
-.footer button:hover {
-  border: 2px solid #2f3676;
+.form-footer p {
+  margin-top: 7px;
+  color: #00C57C;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.form-footer button {
+  background: #2F3676;
+}
+
+.form-footer button:focus,
+.form-footer button:hover {
   background: #191847;
+}
+
+.form-footer button:disabled {
+  background: #c5cdd6;
+  border: 2px solid #555555;
 }
