@@ -162,6 +162,7 @@ form textarea {
 
 .counter button > svg {
   fill: #2f3676;
+  transition-duration: 0.3s;
 }
 
 .counter button:disabled > svg {
@@ -235,6 +236,7 @@ form textarea {
 
 .form-footer button {
   background: #2F3676;
+  transition-duration: 0.3s;
 }
 
 .form-footer button:focus,
