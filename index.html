@@ -23,34 +23,34 @@
 
     <form>
       <section class="fieldset">
-        <h2 class="field-title">Quais stickers?</h2>
+        <h2 class="field-title" id="sticker-type">Quais stickers?</h2>
         <div class="checking">
           <label class="checkbox">
-            <input type="checkbox" value="react" id="react" />
-            <span>React</span>
+            <input type="checkbox" value="react" id="react" aria-labelledby="react-label sticker-type"/>
+            <span id="react-label">React</span>
           </label>
           <label class="checkbox">
-            <input type="checkbox" value="vue" id="vue" />
-            <span>Vue</span>
+            <input type="checkbox" value="vue" id="vue" aria-labelledby="vue-label sticker-type"/>
+            <span id="vue-label">Vue</span>
           </label>
           <label class="checkbox">
-            <input type="checkbox" value="angular" id="angular" />
-            <span>Angular</span>
+            <input type="checkbox" value="angular" id="angular" aria-labelledby="angular-label sticker-type"/>
+            <span id="angular-label">Angular</span>
           </label>
         </div>
       </section>
 
       <section class="fieldset">
-        <h2 class="field-title">Quantos stickers de cada?</h2>
+        <h2 class="field-title" id="sticker-quantity">Quantos stickers de cada?</h2>
 
         <div class="counter">
-          <button type="button">
+          <button type="button" aria-labelledby="sticker-quantity" aria-label="Retirar stickers">
             <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42">
               <path d="M4.667 0A4.668 4.668 0 0 0 0 4.667v32.666A4.668 4.668 0 0 0 4.667 42h32.666A4.668 4.668 0 0 0 42 37.333V4.667A4.668 4.668 0 0 0 37.333 0H4.667zm28 23.333H9.333v-4.666h23.334v4.666z" />
             </svg>
           </button>
-          <input type="text" placeholder="0" aria-label="Quantos stickers de cada?" />
-          <button type="button">
+          <input type="text" placeholder="0" aria-label="Quantidade de stickers" aria-labelledby="sticker-quantity" aria-required="true"/>
+          <button type="button" aria-labelledby="sticker-quantity" aria-label="Adicionar stickers">
             <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" alt="Subtrair stickers">
               <path d="M4.667 42h32.666A4.668 4.668 0 0 0 42 37.333V4.667A4.668 4.668 0 0 0 37.333 0H4.667A4.668 4.668 0 0 0 0 4.667v32.666A4.668 4.668 0 0 0 4.667 42zm4.666-23.333h9.334V9.333h4.666v9.334h9.334v4.666h-9.334v9.334h-4.666v-9.334H9.333v-4.666z" />
             </svg>
@@ -59,8 +59,8 @@
       </section>
 
       <section class="fieldset">
-        <h2 class="field-title">Observações:</h2>
-        <textarea name="descricao" placeholder="Alguma dúvida? Recado?" aria-label="Observações"></textarea>
+        <h2 class="field-title" id="stickers-obs">Observações:</h2>
+        <textarea name="descricao" placeholder="Alguma dúvida? Recado?" aria-label="Observações" aria-labelledby="stickers-obs"></textarea>
       </section>
 
       <section class="form-footer">
