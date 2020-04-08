@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html dir="ltr">
+<html lang="pt" dir="ltr">
 
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8" />
   <title>Teste Frontend VAGAS.com</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta charset="UTF-8" />
   <link rel="stylesheet" href="./styles.css">
   <meta name="theme-color" content="#663299">
 </head>
@@ -15,18 +14,16 @@
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
 
-  <div class="box">
-
+  <main>
     <header>
       <section class="title">
-        <h1>Formulário <br /> para compra de <br /><span>Pacote de Stickers</span></h1>
+        <h1>Formulário <br aria-hidden="true" /> para compra de <br aria-hidden="true" /><b>Pacote de Stickers</b></h1>
       </section>
     </header>
 
     <form>
-
       <section class="fieldset">
-        <p class="field-title">Quais stickers?</p>
+        <h2 class="field-title">Quais stickers?</h2>
         <div class="checking">
           <label class="checkbox">
             <input type="checkbox" value="react" id="react" />
@@ -44,15 +41,15 @@
       </section>
 
       <section class="fieldset">
-        <p class="field-title">Quantos stickers de cada?</p>
+        <h2 class="field-title">Quantos stickers de cada?</h2>
 
         <div class="counter">
-          <button type="button" disabled="disabled">
+          <button type="button">
             <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42">
               <path d="M4.667 0A4.668 4.668 0 0 0 0 4.667v32.666A4.668 4.668 0 0 0 4.667 42h32.666A4.668 4.668 0 0 0 42 37.333V4.667A4.668 4.668 0 0 0 37.333 0H4.667zm28 23.333H9.333v-4.666h23.334v4.666z" />
             </svg>
           </button>
-          <input type="text" placeholder="0" />
+          <input type="text" placeholder="0" aria-label="Quantos stickers de cada?" />
           <button type="button">
             <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" alt="Subtrair stickers">
               <path d="M4.667 42h32.666A4.668 4.668 0 0 0 42 37.333V4.667A4.668 4.668 0 0 0 37.333 0H4.667A4.668 4.668 0 0 0 0 4.667v32.666A4.668 4.668 0 0 0 4.667 42zm4.666-23.333h9.334V9.333h4.666v9.334h9.334v4.666h-9.334v9.334h-4.666v-9.334H9.333v-4.666z" />
@@ -61,19 +58,17 @@
         </div>
       </section>
 
-
       <section class="fieldset">
-        <p class="field-title">Observações:</p>
-        <textarea name="descricao" placeholder="Alguma dúvida? Recado?"></textarea>
+        <h2 class="field-title">Observações:</h2>
+        <textarea name="descricao" placeholder="Alguma dúvida? Recado?" aria-label="Observações"></textarea>
       </section>
 
-
       <section class="form-footer">
-        <p>Formulário enviado com sucesso!</p>
+        <p class="hide">Formulário enviado com sucesso!</p>
         <button type="submit">Enviar</button>
       </section>
     </form>
-  </div>
+  </main>
 
   <script src="index.js"></script>
 </body>

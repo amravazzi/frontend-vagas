@@ -26,7 +26,7 @@ input, button, textarea {
   cursor: pointer;
 }
 
-.box {
+main {
   background-color: #f2f2f2;
   border-radius: 8px;
   box-shadow: 10px 22px 34px 0 rgba(0, 0, 0, 0.5);
@@ -36,7 +36,7 @@ input, button, textarea {
 }
 
 @media only screen and (max-width: 560px) {
-  .box {
+  main {
     width: 100%;
     margin: 0;
     border-radius: 0;
@@ -67,11 +67,6 @@ header section.title h1 {
   font-size: 23px;
   font-weight: 200;
   line-height: 28px;
-}
-
-header .title span {
-  font-weight: bold;
-  font-size: 23px;
 }
 
 form {
@@ -250,4 +245,12 @@ form textarea {
 .form-footer button:disabled {
   background: #c5cdd6;
   border: 2px solid #555555;
+}
+
+.hide {
+  visibility: hidden;
+}
+
+.show {
+  visibility: visible;
 }
