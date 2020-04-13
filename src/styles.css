@@ -1,5 +1,12 @@
 @import url("https://rsms.me/inter/inter.css");
 
+:root {
+  --page-bg-color: rebeccapurple;
+  --page-text-color: #071723;
+  --main-bg-color: #f2f2f2;
+  --container-border-radius: 12px;
+}
+
 html {
   font-family: "Inter", sans-serif;
 }
@@ -17,45 +24,52 @@ html {
 }
 
 body {
-  background: rebeccapurple;
-  color: #071723;
+  background: var(--page-bg-color);
+  color: var(--page-text-color);
 }
 
-input, button, textarea {
-  outline: none;
+input[type="checkbox"],
+button,
+textarea {
   cursor: pointer;
 }
 
-main {
-  background-color: #f2f2f2;
-  border-radius: 8px;
-  box-shadow: 10px 22px 34px 0 rgba(0, 0, 0, 0.5);
+input:focus,
+button:focus,
+textarea:focus {
+  box-shadow: 0 0 0 0.5rem rgba(121, 82, 179, 0.4);
+  outline: none;
+  transition-duration: 0.3s;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.container {
+  background-color: var(--main-bg-color);
+  border-radius: var(--container-border-radius);
   margin: 20px auto;
-  overflow: hidden;
   width: 560px;
-}
-
-@media only screen and (max-width: 560px) {
-  main {
-    width: 100%;
-    margin: 0;
-    border-radius: 0;
-  }
-}
-
-.field-title {
-  font-size: 18px;
-  font-weight: 600;
-  margin-top: 16px;
-  margin-bottom: 16px;
+  box-shadow: 10px 22px 34px 0 rgba(0, 0, 0, 0.5);
 }
 
 header {
-  background: url(images/header.png) center right no-repeat;
+  background: url(../public/images/header.png) center right no-repeat;
   background-size: cover;
+  background-color: var(--main-bg-color);
+  border-radius: 8px;
   height: 187px;
   padding: 23px 36px;
-  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 0;
+  width: 560px;
 }
 
 header section.title {
@@ -86,8 +100,16 @@ form textarea {
   line-height: 24px;
 }
 
-.fieldset {
+fieldset {
   padding: 0 32px 16px;
+  border: none;
+}
+
+legend {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 16px;
+  margin-bottom: 16px;
 }
 
 .checking .checkbox {
@@ -102,6 +124,7 @@ form textarea {
   padding-left: 0.25rem;
   vertical-align: middle;
   font-size: 14px;
+  text-transform: capitalize;
 }
 
 .checking .checkbox > input {
@@ -135,12 +158,12 @@ form textarea {
 }
 
 .checking .checkbox > input:checked + span::before {
-  content: '✓';
+  content: "✓";
   display: block;
   font-weight: 750;
   font-size: 18px;
   text-align: center;
-  color: #FFF;
+  color: #fff;
   position: absolute;
   left: 0.3rem;
   top: 0.15rem;
@@ -158,6 +181,8 @@ form textarea {
 
 .counter button {
   border: none;
+  border-radius: 5px;
+  height: 42px;
 }
 
 .counter button > svg {
@@ -169,7 +194,7 @@ form textarea {
   fill: #c5cfd6;
 }
 
-.counter button:hover > svg {
+.counter button:not(:disabled):hover > svg {
   fill: #191847;
 }
 
@@ -211,6 +236,16 @@ form textarea {
   background: #dde3e9;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  border-radius: var(--container-border-radius);
+}
+
+.form-footer p {
+  margin-top: 7px;
+  color: #00c57c;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
 }
 
 .form-footer button {
@@ -224,22 +259,17 @@ form textarea {
   text-transform: uppercase;
   font-weight: bold;
   padding: 8px 32px;
-}
-
-.form-footer p {
-  margin-top: 7px;
-  color: #00C57C;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 22px;
-}
-
-.form-footer button {
-  background: #2F3676;
   transition-duration: 0.3s;
+  border: 2px solid #555555;
+  max-height: 133px;
 }
 
-.form-footer button:focus,
+/* .form-footer button:focus {
+  box-shadow: 0 0 0 0.5rem rgba(121, 82, 179, 0.4);
+  border: 10px solid 
+} */
+
+/* .form-footer button:focus, */
 .form-footer button:hover {
   background: #191847;
 }
@@ -255,4 +285,22 @@ form textarea {
 
 .show {
   visibility: visible;
+}
+
+@media only screen and (max-width: 560px) {
+  main,
+  header,
+  .container {
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .container {
+    min-height: 100vh;
+  }
+
+  .form-footer {
+    border-radius: 0;
+  }
 }
